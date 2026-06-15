@@ -27,11 +27,11 @@ export default function Home() {
   }
 
   const features = [
-    {title: "Swipe That Understands You", desc: "VYBBER’s AI watches what you pause on, what you replay, what makes you smile. Then it feeds you more of that. No more random content. Just your vibe, infinitely.", img: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800"},
-    {title: "Glass Chat, Telegram Speed", desc: "We stole Telegram’s best idea: glassmorphism. Frosted blur, instant delivery, end-to-end vibes. Chat with friends while watching videos. No app switching. No lag.", img: "https://images.unsplash.com/photo-1555421689-3f0340c9bb0f?w=800"},
-    {title: "Learn & Earn Skills", desc: "Every video can teach you something. Tap ‘Learn Mode’ and VYBBER breaks the video into lessons. Finish a lesson, earn credits. Use credits to buy courses from creators.", img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"},
-    {title: "Marketplace Inside", desc: "See a product in a video? Tap it. Buy it. No leaving the app. Creators get paid. You get what you want. VYBBER takes 5% only. The rest goes to the hustlers.", img: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800"},
-    {title: "AI Truth Check", desc: "Fake news ends here. Every video gets scanned by AI in real-time. Green check = verified. Red flag = AI explains why it’s false. You decide what to believe.", img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800"}
+    {title: "Swipe That Understands You", desc: "VYBBER’s AI watches what you pause on, what you replay, what makes you smile. Then it feeds you more of that. No more random content. Just your vibe, infinitely.", img: "https://images.unsplash.com/photo-1661160094555-a798a7df499f?w=800"},
+    {title: "Glass Chat, Telegram Speed", desc: "We stole Telegram’s best idea: glassmorphism. Frosted blur, instant delivery, end-to-end vibes. Chat with friends while watching videos. No app switching. No lag.", img: "https://images.unsplash.com/photo-1552068751-34cb5cf055b3?w=800"},
+    {title: "Learn & Earn Skills", desc: "Every video can teach you something. Tap ‘Learn Mode’ and VYBBER breaks the video into lessons. Finish a lesson, earn credits. Use credits to buy courses from creators.", img: "https://plus.unsplash.com/premium_photo-1683707120391-6c0da3cac6be?w=800"},
+    {title: "Marketplace Inside", desc: "See a product in a video? Tap it. Buy it. No leaving the app. Creators get paid. You get what you want. VYBBER takes 5% only. The rest goes to the hustlers.", img: "https://plus.unsplash.com/premium_photo-1683758825237-de2f8946dd91?w=800"},
+    {title: "AI Truth Check", desc: "Fake news ends here. Every video gets scanned by AI in real-time. Green check = verified. Red flag = AI explains why it’s false. You decide what to believe.", img: "https://plus.unsplash.com/premium_vector-1761265310333-43fcafd2e01a?w=800"}
   ]
 
   return (
@@ -62,10 +62,10 @@ export default function Home() {
           transition={{duration:0.8}}
           className="w-full max-w-5xl backdrop-blur-2xl bg-white/5 border-white/10 rounded-3xl p-6 sm:p-12"
         >
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" className="rounded-2xl w-full h-64 sm:h-96 object-cover mb-8" alt="Social"/>
+          <img src="https://images.unsplash.com/photo-1665799871677-f1fd17338b43?w=1200" className="rounded-2xl w-full h-64 sm:h-96 object-cover mb-8" alt="Social"/>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">This Is Not Just Another App</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-7 sm:leading-8">
-            Sentence 1: We studied TikTok for 2 years. Sentence 2: We studied Telegram for 3 years. Sentence 3: We asked 10,000 Gen Z what they actually want. Sentence 4: They said ‘stop wasting my time’. Sentence 5: So we built VYBBER. Sentence 6: An app that learns you faster than you learn it. Sentence 7: Where every swipe teaches the AI. Sentence 8: Where every chat feels like the future. Sentence 9: This is social media rebuilt from zero. Sentence 10: Welcome to VYBBER.
+             We studied TikTok for 2 years. We studied Telegram for 3 years. We asked 10,000 Gen Z what they actually want.They said ‘stop wasting my time’. Sentence  So we built VYBBER. An app that learns you faster than you learn it. Where every swipe teaches the AI. Where every chat feels like the future. This is social media rebuilt from zero. Welcome to VYBBER.
           </p>
         </motion.div>
       </section>

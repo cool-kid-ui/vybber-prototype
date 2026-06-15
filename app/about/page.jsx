@@ -28,16 +28,16 @@ export default function About() {
 
           {/* Photo 1: Born in Onitsha */}
           <div className="relative rounded-2xl overflow-hidden my-8">
-            <img src="https://images.unsplash.com/photo-1580518881312-43130f2ea815?q=80&w=1200&auto=format&fit=crop" alt="Born in Onitsha" className="w-full h-80 object-cover" />
+            <img src="https://plus.unsplash.com/premium_photo-1684979565998-baea4bcc8efa?q=80&w=1200&auto=format&fit=crop" alt="Born in Onitsha" className="w-full h-80 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-            <p className="absolute bottom-6 left-6 text-white text-2xl font-bold">Born in Onitsha, 2024</p>
+            <p className="absolute bottom-6 left-6 text-white text-2xl font-bold">Born in Nigeria, 2024</p>
           </div>
 
-          <p>VYBBER was born in Onitsha, Nigeria in 2024 when our founder got tired of switching between 5 apps just to have fun and learn. He would open TikTok for videos, WhatsApp for friends, YouTube for learning, Instagram for shopping, and Twitter for news. That’s 5 logins, 5 algorithms, 5 distractions. He thought: why can’t one app do all of this, but better?</p>
+          <p>VYBBER was born in Anambra State, Nigeria in 2024 when our founder got tired of switching between 5 apps just to have fun and learn. He would open TikTok for videos, WhatsApp for friends, YouTube for learning, Instagram for shopping, and Twitter for news. That’s 5 logins, 5 algorithms, 5 distractions. He thought: why can’t one app do all of this, but better?</p>
 
           {/* Photo 2: Gen Z Team */}
           <div className="relative rounded-2xl overflow-hidden my-8">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Gen Z Team" className="w-full h-80 object-cover" />
+            <img src="https://images.unsplash.com/photo-1769257186252-2a4731c2395d?q=80&w=1200&auto=format&fit=crop" alt="Gen Z Team" className="w-full h-80 object-cover" />
             <div className="absolute inset-0 bg-orange-600/40 mix-blend-overlay"></div>
             <p className="absolute bottom-6 left-6 text-white text-2xl font-bold">Built by Gen Z, for Gen Z</p>
           </div>

@@ -41,7 +41,7 @@ export default function Privacy() {
           <h2 className="text-3xl font-bold text-white mt-12">3. AI & Algorithm</h2>
           <p>Our algorithm analyzes what you watch, like, share to personalize your feed. Data stays on our servers. Reset anytime in Settings &gt; Privacy &gt; Reset AI.</p>
           <div className="relative rounded-2xl overflow-hidden my-8">
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop" alt="AI Privacy" className="w-full h-64 object-cover" />
+            <img src="https://plus.unsplash.com/premium_photo-1725907643567-1694c2737432?q=80&w=1200&auto=format&fit=crop" alt="AI Privacy" className="w-full h-64 object-cover" />
             <div className="absolute inset-0 bg-blue-600/30 mix-blend-overlay"></div>
             <p className="absolute bottom-4 left-4 text-white font-bold">AI stays private</p>
           </div>
