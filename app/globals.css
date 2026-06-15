@@ -30,21 +30,35 @@ body {
   display: inline-block;
 }
 
+.glow-text {
+  position: relative;
+  z-index: 1;
+}
+
 .glow-text::before {
   content: '';
   position: absolute;
-  inset: -20px;
-  background: linear-gradient(90deg, #8b5cf6, #ec4899, #8b5cf6);
-  background-size: 200% 200%;
-  filter: blur(40px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300%;  /* 2x wider than text */
+  height: 300%; /* 2x taller than text */
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
+  background-size: 300% 300%; /* for moving effect */
+  filter: blur(80px); /* bigger blur = softer glow */
   opacity: 0.6;
-  border-radius: 20px;
   z-index: -1;
-  animation: gradientMove 3s ease infinite;
+  border-radius: 50%;
+  animation: glowMove 4s ease-in-out infinite; /* life/moving */
 }
 
-@keyframes gradientMove {
- 0% { background-position: 0% 50%; }
- 50% { background-position: 100% 50%; }
- 100% { background-position: 0% 50%; }
+@keyframes glowMove {
+ 0%, 100% { 
+    background-position: 0% 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+ 50% { 
+    background-position: 100% 50%;
+    transform: translate(-50%, -50%) scale(1.2); /* pulse effect */
+  }
 }
