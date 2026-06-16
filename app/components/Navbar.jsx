@@ -1,47 +1,36 @@
 'use client'
-import Link from 'next/link'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
 
-  const NavLinks = () => (
-    <>
-      <Link href="/about" className="hover:text-white transition" onClick={() => setOpen(false)}>About</Link>
-      <Link href="/docs" className="hover:text-white transition" onClick={() => setOpen(false)}>Docs</Link>
-      <Link href="/privacy" className="hover:text-white transition" onClick={() => setOpen(false)}>Privacy</Link>
-      <Link href="/terms" className="hover:text-white transition" onClick={() => setOpen(false)}>Terms</Link>
-    </>
-  )
-
   return (
-    <nav className="fixed top-0 w-full backdrop-blur-xl bg-black/60 border-b border-white/10 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-          VYBBER
-        </Link>
-
+    <nav style={{position:'fixed',top:0,width:'100%',background:'rgba(0,0,0,0.8)',zIndex:50,borderBottom:'1px solid #333'}}>
+      <div style={{maxWidth:'1200px',margin:'0 auto',padding:'16px 24px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+        <Link href="/" style={{fontSize:'24px',fontWeight:'bold',color:'white'}}>VYBBER</Link>
+        
         {/* Desktop */}
-        <div className="hidden md:flex gap-8 text-gray-300">
-          <NavLinks />
+        <div style={{display:'none',gap:'32px'}} className="desktop-nav">
+          <Link href="/about" style={{color:'#ccc'}}>About</Link>
+          <Link href="/docs" style={{color:'#ccc'}}>Docs</Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button onClick={() => setOpen(!open)} className="md:hidden flex-col gap-1.5 p-2" aria-label="Menu">
-          <span className={`w-6 h-0.5 bg-white transition ${open ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-white transition ${open ? 'opacity-0' : ''}`}></span>
-          <span className={`w-6 h-0.5 bg-white transition ${open ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        {/* Mobile button */}
+        <button onClick={() => setOpen(!open)} style={{background:'none',border:'none',cursor:'pointer'}}>
+          <div style={{width:'24px',height:'2px',background:'white',margin:'5px 0',transition:'0.3s',transform: open ? 'rotate(45deg) translate(5px,5px)' : 'none'}}></div>
+          <div style={{width:'24px',height:'2px',background:'white',margin:'5px 0',transition:'0.3s',opacity: open ? 0 : 1}}></div>
+          <div style={{width:'24px',height:'2px',background:'white',margin:'5px 0',transition:'0.3s',transform: open ? 'rotate(-45deg) translate(5px,-5px)' : 'none'}}></div>
         </button>
       </div>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-black/95 border-t border-white/10">
-          <div className="flex flex-col gap-6 text-gray-300 px-6 py-6">
-            <NavLinks />
-          </div>
+      <div style={{maxHeight: open ? '300px' : '0',overflow:'hidden',transition:'max-height 0.3s',background:'#111'}}>
+        <div style={{padding:'20px',display:'flex',flexDirection:'column',gap:'16px'}}>
+          <Link href="/about" onClick={() => setOpen(false)} style={{color:'#ccc'}}>About</Link>
+          <Link href="/docs" onClick={() => setOpen(false)} style={{color:'#ccc'}}>Docs</Link>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
