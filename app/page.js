@@ -46,9 +46,9 @@ export default function Home() {
         </motion.div>
 
         <motion.div style={{ y }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} className="relative z-10 text-center w-full max-w-4xl">
-          <h1 className="glow-text text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="glow-text bounce-text text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
             VYBBER
-          </h1>
+         </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-400 mt-4">Scroll down to see the future</p>
         </motion.div>
       </section>
