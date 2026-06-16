@@ -4,6 +4,36 @@ import { useRef, useState } from 'react'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
 
+const FloatingShapes = () => {
+  const shapes = Array.from({ length: 18 })
+  return (
+    <>
+      {shapes.map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-40 blur-sm"
+          initial={{
+            x: Math.random() * 100 + "%",
+            y: "110%",
+            scale: 0
+          }}
+          animate={{
+            y: "-110%",
+            scale: [0, 1, 0],
+            x: Math.random() * 100 + "%"
+          }}
+          transition={{
+            duration: 6 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "easeOut"
+          }}
+        />
+      ))}
+    </>
+  )
+}
+
 export default function Home() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] })
@@ -16,7 +46,7 @@ export default function Home() {
     e.preventDefault()
     try {
       await addDoc(collection(db, "waitlist"), {
-       ...form,
+      ...form,
         createdAt: serverTimestamp()
       })
       setSent(true)
@@ -44,6 +74,8 @@ export default function Home() {
         >
           <div className="w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-gradient-to-r from-purple-600 to-pink-600 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
         </motion.div>
+
+        <FloatingShapes />
 
         <motion.div style={{ y }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} className="relative z-10 text-center w-full max-w-4xl">
           <h1 className="glow-text text-7xl sm:text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter">
