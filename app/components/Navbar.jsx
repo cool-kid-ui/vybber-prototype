@@ -46,7 +46,7 @@ export default function Navbar() {
           fontSize:'24px',
           fontWeight:'bold',
           textDecoration:'none',
-          background:'linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2)',
+          background:'linear-gradient( #8a2be2)',
           WebkitBackgroundClip:'text',
           WebkitTextFillColor:'transparent',
           backgroundClip:'text'
