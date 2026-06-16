@@ -1,15 +1,10 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,11 +22,6 @@ body {
 
 .glow-text {
   position: relative;
-  display: inline-block;
-}
-
-.glow-text {
-  position: relative;
   z-index: 1;
 }
 
@@ -41,15 +31,15 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300%;  /* 2x wider than text */
-  height: 300%; /* 2x taller than text */
+  width: 300%;
+  height: 300%;
   background: linear-gradient(90deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
-  background-size: 300% 300%; /* for moving effect */
-  filter: blur(80px); /* bigger blur = softer glow */
+  background-size: 300% 300%;
+  filter: blur(80px);
   opacity: 0.6;
   z-index: -1;
   border-radius: 50%;
-  animation: glowMove 4s ease-in-out infinite; /* life/moving */
+  animation: glowMove 4s ease-in-out infinite;
 }
 
 @keyframes glowMove {
@@ -59,6 +49,6 @@ body {
   }
  50% { 
     background-position: 100% 50%;
-    transform: translate(-50%, -50%) scale(1.2); /* pulse effect */
+    transform: translate(-50%, -50%) scale(1.2);
   }
 }
