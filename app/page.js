@@ -11,7 +11,7 @@ const FloatingShapes = () => {
       {shapes.map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-40 blur-sm"
+          className="absolute w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 opacity-80 blur-none pointer-events-none z-0"
           initial={{
             x: Math.random() * 100 + "%",
             y: "110%",
@@ -46,7 +46,7 @@ export default function Home() {
     e.preventDefault()
     try {
       await addDoc(collection(db, "waitlist"), {
-      ...form,
+     ...form,
         createdAt: serverTimestamp()
       })
       setSent(true)
@@ -77,7 +77,7 @@ export default function Home() {
 
         <FloatingShapes />
 
-        <motion.div style={{ y }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} className="relative z-10 text-center w-full max-w-4xl">
+        <motion.div style={{ y }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} className="relative z-20 text-center w-full max-w-4xl">
           <h1 className="glow-text text-7xl sm:text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter">
             <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">V</span>
             <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Y</span>
