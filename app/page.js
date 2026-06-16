@@ -16,7 +16,7 @@ export default function Home() {
     e.preventDefault()
     try {
       await addDoc(collection(db, "waitlist"), {
-        ...form,
+       ...form,
         createdAt: serverTimestamp()
       })
       setSent(true)
@@ -46,15 +46,15 @@ export default function Home() {
         </motion.div>
 
         <motion.div style={{ y }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }} className="relative z-10 text-center w-full max-w-4xl">
-          <h1 className="glow-text text-5xl sm:text-7xl md:text-9xl font-black tracking-tighter">
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">V</span>
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Y</span>
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">B</span>
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">B</span>
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">E</span>
-  <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">R</span>
-</h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-400 mt-4">Scroll down to see the future</p>
+          <h1 className="glow-text text-7xl sm:text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter">
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">V</span>
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">Y</span>
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">B</span>
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">B</span>
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">E</span>
+            <span className="bounce-letter bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">R</span>
+          </h1>
+          <p className="text-xl sm:text-lg md:text-xl text-gray-400 mt-6">Scroll down to see the future</p>
         </motion.div>
       </section>
 
@@ -70,7 +70,7 @@ export default function Home() {
           <img src="https://images.unsplash.com/photo-1665799871677-f1fd17338b43?w=1200" className="rounded-2xl w-full h-64 sm:h-96 object-cover mb-8" alt="Social" />
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">This Is Not Just Another App</h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-7 sm:leading-8">
-            We studied TikTok for 2 years. We studied Telegram for 3 years. We asked 10,000 Gen Z what they actually want.They said ‘stop wasting my time’. Sentence  So we built VYBBER. An app that learns you faster than you learn it. Where every swipe teaches the AI. Where every chat feels like the future. This is social media rebuilt from zero. Welcome to VYBBER.
+            We studied TikTok for 2 years. We studied Telegram for 3 years. We asked 10,000 Gen Z what they actually want. They said ‘stop wasting my time’. So we built VYBBER. An app that learns you faster than you learn it. Where every swipe teaches the AI. Where every chat feels like the future. This is social media rebuilt from zero. Welcome to VYBBER.
           </p>
         </motion.div>
       </section>
@@ -81,10 +81,10 @@ export default function Home() {
             <motion.div key={i}
               whileHover={{ scale: 1.03, rotateX: 5 }}
               style={{ perspective: 1000 }}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -100 : 100 }}
+              initial={{ opacity: 0, x: i % 2 === 0? -100 : 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="grid md:grid-cols-2 gap-8 md:gap-12 items-center backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-12"
+              className="grid md:grid-cols-2 gap-8 md:gap-12 items-center backdrop-blur-xl bg-white/5 border-white/10 rounded-3xl p-6 sm:p-12"
             >
               <img src={f.img} className="rounded-2xl w-full h-64 sm:h-80 object-cover" alt={f.title} />
               <div>
@@ -105,11 +105,11 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Join 10,000+ On The Waitlist</h2>
           <p className="text-gray-400 mb-8 text-base sm:text-lg">Be first. Get early access. Shape VYBBER with us.</p>
 
-          {!sent ? (
+          {!sent? (
             <form onSubmit={handleSubmit} className="space-y-4">
-              <input required placeholder="Your Name" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({ ...form, name: e.target.value })} />
-              <input required type="email" placeholder="Email Address" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({ ...form, email: e.target.value })} />
-              <input placeholder="Phone Number" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({ ...form, phone: e.target.value })} />
+              <input required placeholder="Your Name" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({...form, name: e.target.value })} />
+              <input required type="email" placeholder="Email Address" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({...form, email: e.target.value })} />
+              <input placeholder="Phone Number" className="w-full p-4 rounded-2xl bg-white/10 border-white/20 text-base" onChange={e => setForm({...form, phone: e.target.value })} />
               <button className="w-full p-4 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 font-bold text-base sm:text-lg">Get Early Access</button>
             </form>
           ) : (
