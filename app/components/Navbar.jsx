@@ -20,7 +20,6 @@ export default function Navbar() {
     {href: '/privacy', label: 'Privacy'}
   ]
 
-  // Mobile padding 20% smaller: 16px -> 12.8px
   const navPadding = isMobile ? '12.8px 24px' : '16px 24px'
 
   return (
@@ -29,24 +28,24 @@ export default function Navbar() {
       top:0,
       left:0,
       width:'100%',
-      background:'var(--background)',
+      background:'#0a0a0a', // FORCED black. Ignores phone light/dark mode
       borderBottom:'1px solid #222',
       zIndex:1000
     }}>
       <div style={{
         maxWidth:'1200px',
         margin:'0 auto',
-        padding: navPadding, // Reduced height on mobile
+        padding: navPadding,
         display:'flex',
         justifyContent:'space-between',
         alignItems:'center'
       }}>
-        {/* VYBBER logo with gradient like your hero */}
+        {/* Gradient VYBBER logo */}
         <Link href="/" style={{
           fontSize:'24px',
           fontWeight:'bold',
           textDecoration:'none',
-          background:'linear-gradient( #8a2be2)',
+          background:'linear-gradient(90deg, #ff0080, #ff8c00, #8a2be2)',
           WebkitBackgroundClip:'text',
           WebkitTextFillColor:'transparent',
           backgroundClip:'text'
@@ -55,16 +54,16 @@ export default function Navbar() {
         {/* Desktop nav */}
         <div style={{display: isMobile ? 'none' : 'flex', gap:'32px'}}>
           {links.map(l => (
-            <Link key={l.href} href={l.href} style={{color:'var(--foreground)',opacity:0.8,textDecoration:'none',fontSize:'16px'}}>{l.label}</Link>
+            <Link key={l.href} href={l.href} style={{color:'#ededed',opacity:0.8,textDecoration:'none',fontSize:'16px'}}>{l.label}</Link>
           ))}
         </div>
 
         {/* Mobile hamburger */}
         {isMobile && (
           <button onClick={() => setOpen(!open)} style={{background:'none',border:'none',cursor:'pointer',padding:6}}>
-            <div style={{width:'22px',height:'2px',background:'var(--foreground)',margin:'4px 0',transition:'0.3s',transform: open ? 'rotate(45deg) translate(4px,4px)' : 'none'}}></div>
-            <div style={{width:'22px',height:'2px',background:'var(--foreground)',margin:'4px 0',transition:'0.3s',opacity: open ? 0 : 1}}></div>
-            <div style={{width:'22px',height:'2px',background:'var(--foreground)',margin:'4px 0',transition:'0.3s',transform: open ? 'rotate(-45deg) translate(4px,-4px)' : 'none'}}></div>
+            <div style={{width:'22px',height:'2px',background:'#ededed',margin:'4px 0',transition:'0.3s',transform: open ? 'rotate(45deg) translate(4px,4px)' : 'none'}}></div>
+            <div style={{width:'22px',height:'2px',background:'#ededed',margin:'4px 0',transition:'0.3s',opacity: open ? 0 : 1}}></div>
+            <div style={{width:'22px',height:'2px',background:'#ededed',margin:'4px 0',transition:'0.3s',transform: open ? 'rotate(-45deg) translate(4px,-4px)' : 'none'}}></div>
           </button>
         )}
       </div>
@@ -75,12 +74,12 @@ export default function Navbar() {
           maxHeight: open ? '400px' : '0',
           overflow:'hidden',
           transition:'max-height 0.4s ease',
-          background:'var(--background)',
+          background:'#0a0a0a', // Also forced black
           borderTop:'1px solid #222'
         }}>
           <div style={{padding:'16px 24px',display:'flex',flexDirection:'column',gap:'18px'}}>
             {links.map(l => (
-              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{color:'var(--foreground)',opacity:0.9,fontSize:'17px',textDecoration:'none'}}>{l.label}</Link>
+              <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{color:'#ededed',opacity:0.9,fontSize:'17px',textDecoration:'none'}}>{l.label}</Link>
             ))}
           </div>
         </div>
