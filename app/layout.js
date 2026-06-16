@@ -1,4 +1,5 @@
 import './globals.css'
+import Link from 'next/link'
 import Navbar from './components/Navbar.jsx' // Import your existing Navbar component
 
 export const metadata = {
