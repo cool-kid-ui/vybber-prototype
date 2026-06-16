@@ -1,5 +1,5 @@
 import './globals.css'
-import Navbar from '../components/Navbar.jsx' // Import your existing Navbar component
+import Navbar from './components/Navbar.jsx' // Import your existing Navbar component
 
 export const metadata = {
   title: 'VYBBER - The Future of Social',
