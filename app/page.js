@@ -8,28 +8,35 @@ const FloatingShapes = () => {
   const shapes = Array.from({ length: 18 })
   return (
     <>
-      {shapes.map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 opacity-80 blur-none pointer-events-none z-0"
-          initial={{
-            x: Math.random() * 100 + "%",
-            y: "110%",
-            scale: 0
-          }}
-          animate={{
-            y: "-110%",
-            scale: [0, 1, 0],
-            x: Math.random() * 100 + "%"
-          }}
-          transition={{
-            duration: 6 + Math.random() * 4,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "easeOut"
-          }}
-        />
-      ))}
+      {shapes.map((_, i) => {
+        const size = 200 + Math.random() * 50 // 200px to 250px random sizes
+        return (
+          <motion.div
+            key={i}
+            style={{
+              width: size,
+              height: size
+            }}
+            className="absolute rounded-full bg-gradient-to-r from-fuchsia-500 via-purple-500 to-pink-500 opacity-90 blur-none pointer-events-none z-0"
+            initial={{
+              x: Math.random() * 100 + "%",
+              y: "110%",
+              scale: 0
+            }}
+            animate={{
+              y: "-110%",
+              scale: [0, 1, 0],
+              x: Math.random() * 100 + "%"
+            }}
+            transition={{
+              duration: 6 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+              ease: "easeOut"
+            }}
+          />
+        )
+      })}
     </>
   )
 }
